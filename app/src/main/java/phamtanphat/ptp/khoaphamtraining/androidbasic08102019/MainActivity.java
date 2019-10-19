@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     // global scope
@@ -40,5 +41,34 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d("BBB","Nhay vao trong do");
 //        }while (index == arrayName.length);
         // 6 : function
+
+//        Log.d("BBB", showName("Phat"));
+        // 0 -> 100
+        // 1 : in ra so chan
+        // 2 : in ra so le
+        // 3 : in ra so chia 3 du 1
+//        inSoChan();
+//        inSole();
+//        inSoChiaBaDuMot();
+        inChinhPhuong();
+        inNguyenTo();
     }
+    //1 : access modifier : pham vi truy cập của biến , class , function
+    // 2 : gia trị trả về
+//    private String showName(String name){
+//        return  name;
+//
+//    }
+    private void inSoChan(){
+        for (int i = 0 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
+    }
+    private void inSoLe(){
+        for (int i = 1 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
+    }
+    private void inSoChiaBaDuMot(){
+        for (int i = 1 ; i <= 100 ; i+= 3) Log.d("BBB",i + "");
+    }
+
+
+
 }
