@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     // global scope
 //    String mTen;
     // block scope : {}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +55,52 @@ public class MainActivity extends AppCompatActivity {
 //        inSoChan();
 //        inSole();
 //        inSoChiaBaDuMot();
-        inChinhPhuong();
-        inNguyenTo();
+//        inChinhPhuong();
+//        inNguyenTo();
+        // Math method
+        // 1 : Lam tron : Math.round()
+//        float number1 = 2.1f;
+//        number1 = Math.round(number1);
+//        Log.d("BBB",number1 + "");
+        // 2 : Lam tron len : 2.1 -> 3
+//        double number2 = 2.1f;
+//        number2 = Math.ceil(number2);
+//        Log.d("BBB",number2 + "");
+        // 3 : Lam tron xuong : 2.9 -> 2
+//        double number3 = 2.9f;
+//        number3 = Math.floor(number3);
+//        Log.d("BBB",number3 + "");
+        // 4 : Math random
+//        for (int i = 0 ; i <= 100 ; i++){
+//            double number4 = Math.floor(Math.random() * 6);
+//            Log.d("BBB",number4 + "");
+//        }
+        // 5 : tim ra so lon nhat , so nho nhat
+        int[] arrayNumber = {1,10,11,20,18,19,21,99};
+//        int sonhonhat = arrayNumber[0];
+//        int solonnhat = 0;
+//        for (int value : arrayNumber){
+//            solonnhat = Math.max(solonnhat,value);
+//            sonhonhat = Math.min(sonhonhat,value);
+//        }
+//        Log.d("BBB",solonnhat + "");
+//        Log.d("BBB",sonhonhat + "");
+        int temp = 0;
+        for (int i = 0 ; i < arrayNumber.length ; i++){
+            if (i < arrayNumber.length - 1){
+                if (arrayNumber[i] > arrayNumber[i + 1]){
+                    temp = arrayNumber[i];
+                    arrayNumber[i] = arrayNumber[i + 1];
+                    arrayNumber[i+1] = temp;
+                }
+            }
+            Log.d("BBB", arrayNumber[i] + "");
+        }
+
+
+
+
+
     }
     //1 : access modifier : pham vi truy cập của biến , class , function
     // 2 : gia trị trả về
@@ -59,15 +108,15 @@ public class MainActivity extends AppCompatActivity {
 //        return  name;
 //
 //    }
-    private void inSoChan(){
-        for (int i = 0 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
-    }
-    private void inSoLe(){
-        for (int i = 1 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
-    }
-    private void inSoChiaBaDuMot(){
-        for (int i = 1 ; i <= 100 ; i+= 3) Log.d("BBB",i + "");
-    }
+//    private void inSoChan(){
+//        for (int i = 0 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
+//    }
+//    private void inSoLe(){
+//        for (int i = 1 ; i <= 100 ; i+= 2) Log.d("BBB",i + "");
+//    }
+//    private void inSoChiaBaDuMot(){
+//        for (int i = 1 ; i <= 100 ; i+= 3) Log.d("BBB",i + "");
+//    }
 
 
 
