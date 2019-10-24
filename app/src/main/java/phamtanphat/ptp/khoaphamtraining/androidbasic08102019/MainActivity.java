@@ -101,18 +101,30 @@ public class MainActivity extends AppCompatActivity {
 //            + Thay doi phan tu trong mang
 //            + Tao ra 1 mang moi voi cac chuc nang duoc thay doi
 
-       int[] arrayNuber = {1,10,11,20,18,19,21,99};
+//       int[] arrayNuber = {1,10,11,20,18,19,21,99};
 
-       int[] newArray = myMap(new Map() {
-           @Override
-           public int onChangeValue(int value) {
-               return (int) Math.sqrt(value);
-           }
-       }, arrayNuber);
+        // bai tap ve nha :
+        //  1 : tinh tong cac gia trong mang
+        //  2 : tim kiem gia tri trong mang
+//                +Neu co tra ve vi tri
+//                +Neu khong co tra ve -1
+        // 3 : tim kiem gia tri o vi tri dau tien
+//            {1,10,11,20,18,1,21,99};
+//            + Neu co in ra vi tri dau tien
+//            + Neu khong co in ra gia tri -1
+        // 4 : Xoa cac phan tu bi trung trong mang
+//            [1,2,3,3,3,4,5] => [1,2,3,4,5]
 
-       for (int i = 0 ; i < newArray.length ; i++){
-           Log.d("BBB",newArray[i] + "");
-       }
+//       int[] newArray = myMap(new Map() {
+//           @Override
+//           public int onChangeValue(int value) {
+//               return (int) Math.sqrt(value);
+//           }
+//       }, arrayNuber);
+//
+//       for (int i = 0 ; i < newArray.length ; i++){
+//           Log.d("BBB",newArray[i] + "");
+//       }
     }
     //1 : access modifier : pham vi truy cập của biến , class , function
     // 2 : gia trị trả về
@@ -129,14 +141,14 @@ public class MainActivity extends AppCompatActivity {
 //    private void inSoChiaBaDuMot(){
 //        for (int i = 1 ; i <= 100 ; i+= 3) Log.d("BBB",i + "");
 //    }
-    private int[] myMap(Map map , int[] array){
-        Map map1 = map;
-        int [] outputArray = new int[array.length];
-        for (int i = 0 ; i < array.length ; i++){
-            outputArray[i] = map1.onChangeValue(array[i]);
-        }
-        return outputArray;
-    }
+//    private int[] myMap(Map map , int[] array){
+//        Map map1 = map;
+//        int [] outputArray = new int[array.length];
+//        for (int i = 0 ; i < array.length ; i++){
+//            outputArray[i] = map1.onChangeValue(array[i]);
+//        }
+//        return outputArray;
+//    }
 
 
 
