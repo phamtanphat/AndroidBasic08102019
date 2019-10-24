@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     // global scope
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d("BBB",number4 + "");
 //        }
         // 5 : tim ra so lon nhat , so nho nhat
-        int[] arrayNumber = {1,10,11,20,18,19,21,99};
+//        int[] arrayNumber = {1,10,11,20,18,19,21,99};
 //        int sonhonhat = arrayNumber[0];
 //        int solonnhat = 0;
 //        for (int value : arrayNumber){
@@ -85,22 +86,33 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        Log.d("BBB",solonnhat + "");
 //        Log.d("BBB",sonhonhat + "");
-        int temp = 0;
-        for (int i = 0 ; i < arrayNumber.length ; i++){
-            if (i < arrayNumber.length - 1){
-                if (arrayNumber[i] > arrayNumber[i + 1]){
-                    temp = arrayNumber[i];
-                    arrayNumber[i] = arrayNumber[i + 1];
-                    arrayNumber[i+1] = temp;
-                }
-            }
-            Log.d("BBB", arrayNumber[i] + "");
-        }
+//        int temp = 0;
+//        for (int i = 0 ; i < arrayNumber.length ; i++){
+//            if (i < arrayNumber.length - 1){
+//                if (arrayNumber[i] > arrayNumber[i + 1]){
+//                    temp = arrayNumber[i];
+//                    arrayNumber[i] = arrayNumber[i + 1];
+//                    arrayNumber[i+1] = temp;
+//                }
+//            }
+//            Log.d("BBB", arrayNumber[i] + "");
+//        }
+        // 7 : Map
+//            + Thay doi phan tu trong mang
+//            + Tao ra 1 mang moi voi cac chuc nang duoc thay doi
 
+       int[] arrayNuber = {1,10,11,20,18,19,21,99};
 
+       int[] newArray = myMap(new Map() {
+           @Override
+           public int onChangeValue(int value) {
+               return (int) Math.sqrt(value);
+           }
+       }, arrayNuber);
 
-
-
+       for (int i = 0 ; i < newArray.length ; i++){
+           Log.d("BBB",newArray[i] + "");
+       }
     }
     //1 : access modifier : pham vi truy cập của biến , class , function
     // 2 : gia trị trả về
@@ -117,6 +129,14 @@ public class MainActivity extends AppCompatActivity {
 //    private void inSoChiaBaDuMot(){
 //        for (int i = 1 ; i <= 100 ; i+= 3) Log.d("BBB",i + "");
 //    }
+    private int[] myMap(Map map , int[] array){
+        Map map1 = map;
+        int [] outputArray = new int[array.length];
+        for (int i = 0 ; i < array.length ; i++){
+            outputArray[i] = map1.onChangeValue(array[i]);
+        }
+        return outputArray;
+    }
 
 
 
