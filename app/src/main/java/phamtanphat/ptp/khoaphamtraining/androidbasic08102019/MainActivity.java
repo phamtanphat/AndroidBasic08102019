@@ -146,8 +146,11 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }
         //4 :
-        int[] numberArrays = { 1, 2, 2, 2, 3, 3, 3, 4 ,4, 4, 4, 5};
+        int[] numberArrays = {0,0,0,0,0, 1, 2, 2, 2, 3, 3, 3, 4 ,4, 4, 4, 5};
         int[] outputArrays = new int[numberArrays.length];
+        for (int h = 0 ; h < outputArrays.length ; h++){
+            outputArrays[h] = Integer.MIN_VALUE;
+        }
 
         for (int i = 0; i < numberArrays.length; i++) {
             boolean thoat = false;
