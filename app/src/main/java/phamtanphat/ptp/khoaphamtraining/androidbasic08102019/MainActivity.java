@@ -103,17 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
 //       int[] arrayNuber = {1,10,11,20,18,19,21,99};
 
-        // bai tap ve nha :
-        //  1 : tinh tong cac gia trong mang
-        //  2 : tim kiem gia tri trong mang
-//                +Neu co tra ve vi tri
-//                +Neu khong co tra ve -1
-        // 3 : tim kiem gia tri o vi tri dau tien
-//            {1,10,11,20,18,1,21,99};
-//            + Neu co in ra vi tri dau tien
-//            + Neu khong co in ra gia tri -1
-        // 4 : Xoa cac phan tu bi trung trong mang
-//            [1,2,3,3,3,4,5] => [1,2,3,4,5]
 
 //       int[] newArray = myMap(new Map() {
 //           @Override
@@ -125,9 +114,41 @@ public class MainActivity extends AppCompatActivity {
 //       for (int i = 0 ; i < newArray.length ; i++){
 //           Log.d("BBB",newArray[i] + "");
 //       }
-    }
-    //1 : access modifier : pham vi truy cập của biến , class , function
-    // 2 : gia trị trả về
+        // bai tap ve nha :
+        //  1 : tinh tong cac gia trong mang
+        //  2 : tim kiem gia tri trong mang
+//                +Neu co tra ve vi tri
+//                +Neu khong co tra ve -1
+        // 3 : tim kiem gia tri o vi tri dau tien
+//            {1,10,11,20,18,1,21,99};
+//            + Neu co in ra vi tri dau tien
+//            + Neu khong co in ra gia tri -1
+
+        // 4 : Xoa cac phan tu bi trung trong mang
+//            [1,2,3,3,3,4,5] => [1,2,3,4,5]
+        // 3 :
+
+        int[] numberArrays = {1, 10, 11, 20, 18, 1, 21, 99};
+
+        int[] outputArrays = new int[numberArrays.length];
+
+        for (int i = 0; i < numberArrays.length; i++) {
+            boolean thoat = false;
+            for (int y = 0; y < outputArrays.length; y++) {
+                if (outputArrays[y] == numberArrays[i]) {
+                    thoat = true;
+                    Log.d("BBB","Vi tri kiem duoc " + i);
+                    break;
+                }
+            }
+            if (thoat == false){
+                outputArrays[i] = numberArrays[i];
+            }
+        }
+
+}
+//1 : access modifier : pham vi truy cập của biến , class , function
+// 2 : gia trị trả về
 //    private String showName(String name){
 //        return  name;
 //
@@ -149,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return outputArray;
 //    }
+
 
 
 
