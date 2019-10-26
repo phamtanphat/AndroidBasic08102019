@@ -128,25 +128,73 @@ public class MainActivity extends AppCompatActivity {
 //            [1,2,3,3,3,4,5] => [1,2,3,4,5]
         // 3 :
 
-        int[] numberArrays = {1, 10, 11, 20, 18, 1, 21, 99};
+//        int[] numberArrays = {1, 10, 11, 20, 18, 1, 21, 99};
+//
+//        int[] outputArrays = new int[numberArrays.length];
+//
+//        for (int i = 0; i < numberArrays.length; i++) {
+//            boolean thoat = false;
+//            for (int y = 0; y < outputArrays.length; y++) {
+//                if (outputArrays[y] == numberArrays[i]) {
+//                    thoat = true;
+//                    Log.d("BBB","Vi tri kiem duoc " + i);
+//                    break;
+//                }
+//            }
+//            if (thoat == false){
+//                outputArrays[i] = numberArrays[i];
+//            }
+//        }
+        //4 :
+//        int[] numberArrays = {0, 0, 1, 2, 2, 2, 3, 3, 3, 4, 5};
+//        int[] outputArrays = new int[numberArrays.length];
+//
+//        for (int i = 0; i < numberArrays.length; i++) {
+//            boolean thoat = false;
+//            for (int y = 0; y < outputArrays.length; y++) {
+//                if (outputArrays[y] == numberArrays[i]) {
+//                    thoat = true;
+//                    outputArrays[i] = -1;
+//                    break;
+//                }
+//            }
+//            if (thoat == false) {
+//                outputArrays[i] = numberArrays[i];
+//            }
+//        }
+//
+//        int count = 0;
+//        for (int j = 0; j < outputArrays.length; j++) {
+//            if (outputArrays[j] == -1) {
+//                count++;
+//            }
+//        }
+//
+//        int[] arrayOutput = new int[outputArrays.length - count];
+//
+//        for (int k = 0; k < outputArrays.length; k++) {
+//            if (outputArrays[k] != -1) {
+//                if (k >= arrayOutput.length) {
+//                    arrayOutput[k - count] = outputArrays[k];
+//
+//                } else {
+//                    arrayOutput[k] = outputArrays[k];
+//                }
+//            }
+//        }
+//
+//        for (int value : arrayOutput) {
+//            Log.d("BBB", value + "");
+//        }
 
-        int[] outputArrays = new int[numberArrays.length];
-
-        for (int i = 0; i < numberArrays.length; i++) {
-            boolean thoat = false;
-            for (int y = 0; y < outputArrays.length; y++) {
-                if (outputArrays[y] == numberArrays[i]) {
-                    thoat = true;
-                    Log.d("BBB","Vi tri kiem duoc " + i);
-                    break;
-                }
-            }
-            if (thoat == false){
-                outputArrays[i] = numberArrays[i];
-            }
+        int[] arrayNumber = {1, 2, 3, 3, 3, 4, 4 ,4 ,4, 5};
+        int[] result = returnArray(arrayNumber);
+        for (int i : result) {
+            Log.d("Result", "Value: " + i);
         }
 
-}
+
+    }
 //1 : access modifier : pham vi truy cập của biến , class , function
 // 2 : gia trị trả về
 //    private String showName(String name){
@@ -171,7 +219,34 @@ public class MainActivity extends AppCompatActivity {
 //        return outputArray;
 //    }
 
+    private boolean checkExistNumber(int[] input, int Number) {
+        Boolean status = false;
+        for (int i : input) {
+            if (Number == i) {
+                status = true;
+                break;
+            }
+        }
+        return status;
+    }
 
+    private int[] returnArray(int[] input) {
+        int k = 0;
+        int[] Temp = new int[input.length];
+        for (int i : input) {
+            if (!checkExistNumber(Temp, i)) {
+                Temp[k] = i;
+                k++;
+            }
+        }
+        int m = 0;
+        int[] arrayFinal = new int[k];
+        for (; m < k; m++) {
+            arrayFinal[m] = Temp[m];
+
+        }
+        return arrayFinal;
+    }
 
 
 }
